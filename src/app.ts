@@ -23,7 +23,8 @@ bot.on('message', async (ctx) => {
 
       await ctx.replyWithHTML(
         `Пользователь <a href="tg://user?id=${user.id}">${user.first_name}</a> не может писать сообщения во всех чатах по команде админа. 
-Причина: нет денег на премиум`,
+Причина: нет денег на премиум
+Купить премиум можно у @PremiumBot`,
       )
     }
   } catch (error) {
