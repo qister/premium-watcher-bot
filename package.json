@@ -5,7 +5,7 @@
   "main": "dist/app.js",
   "scripts": {
     "build": "tsc",
-    "tsc": "tsc",
+    "tsc": "./node_modules/typescript/bin/tsc",
     "start": "node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-prebuild": "npm install",
