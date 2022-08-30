@@ -31,5 +31,19 @@ bot.on('message', async (ctx) => {
   }
 })
 
-bot.launch()
-console.log('Bot started')
+if (process.env.NODE_ENV === 'production') {
+  bot
+    .launch({
+      webhook: {
+        domain: process.env.DOMAIN ?? '',
+        port: Number(process.env.PORT!) ?? 8000,
+      },
+    })
+    .then(() => {
+      console.log('Bot started at production')
+    })
+} else {
+  bot.launch().then(() => {
+    console.log('Bot started locally')
+  })
+}
